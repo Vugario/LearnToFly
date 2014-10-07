@@ -12,27 +12,20 @@
 
 module.exports = {
 
-  /***************************************************************************
-   * Set the default database connection for models in the production        *
-   * environment (see config/connections.js and config/models.js )           *
-   ***************************************************************************/
+  port: 443,
 
-  // models: {
-  //   connection: 'someMysqlServer'
-  // },
-
-  /***************************************************************************
-   * Set the port in the production environment to 80                        *
-   ***************************************************************************/
-
-  port: 80,
+  ssl: {
+    ca: fs.readFileSync('ssl/certificate.ca-bundle'),
+    key: fs.readFileSync('ssl/certificate.key'),
+    cert: fs.readFileSync('ssl/certificate.crt')
+  }
 
   /***************************************************************************
    * Set the log level in production environment to "silent"                 *
    ***************************************************************************/
 
-  // log: {
-  //   level: "silent"
-  // }
+  log: {
+     level: "silent"
+  }
 
 };
