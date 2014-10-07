@@ -18,7 +18,7 @@ module.exports = {
     ca: fs.readFileSync('ssl/certificate.ca-bundle'),
     key: fs.readFileSync('ssl/certificate.key'),
     cert: fs.readFileSync('ssl/certificate.crt')
-  }
+  },
 
   /***************************************************************************
    * Set the log level in production environment to "silent"                 *
