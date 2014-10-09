@@ -21,7 +21,36 @@
   </head>
 
   <body>
-    <%- body %>
+    <header>
+      <div class="container">
+        <div class="logo pull-left">
+          <a href="/"><img src="/images/header-logo.png" alt="Learn to fly - Cloud computing from scratch" height="70" /></a>
+        </div>
+
+        <div class="pull-right">
+          <ul class="menu list-inline">
+            <% if (user) { %>
+              <li><%= __('Hi %s', user.name) %></li>
+              <li><a href="/logout/" class="btn btn-outline"><%= __('Log out') %></a></li>
+            <% } else { %>
+              <li><a href="/auth/github/" class="btn btn-outline"><%= __('Sign in with GitHub') %></a></li>
+            <% } %>
+        </div>
+      </div>
+    </header>
+
+    <% if (view.pathFromApp == "views/home/index") { %>
+      <div class="jumbotron text-center">
+        <h1><%= __('Learn to fly') %></h1>
+        <h3><%= __('Cloud computing from scratch') %></h3>
+      </div>
+    <% } %>
+
+    <div class="container">
+
+      <%- body %>
+
+    </div>
 
     <!--TEMPLATES-->
     

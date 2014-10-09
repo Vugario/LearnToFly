@@ -1,30 +1,50 @@
 /**
  * importer.less
- *
- * By default, new Sails projects are configured to compile this file
- * from LESS to CSS.  Unlike CSS files, LESS files are not compiled and
- * included automatically unless they are imported below.
- *
- * The LESS files imported below are compiled and included in the order
- * they are listed.  Mixins, variables, etc. should be imported first
- * so that they can be accessed by subsequent LESS stylesheets.
- *
- * (Just like the rest of the asset pipeline bundled in Sails, you can
- * always omit, customize, or replace this behavior with SASS, SCSS,
- * or any other Grunt tasks you like.)
  */
 
+@primaryColor: #D66A2D;
+@secundaryColor: #3BBCD9;
 
+ body{
+   font-family:"Open Sans", Arial, sans-serif;
+   font-size: 16px;
+   font-weight:300;
+   line-height: 24px;
+}
 
-// For example:
-//
-// @import 'variables/colors.less';
-// @import 'mixins/foo.less';
-// @import 'mixins/bar.less';
-// @import 'mixins/baz.less';
-//
-// @import 'styleguide.less';
-// @import 'pages/login.less';
-// @import 'pages/signup.less';
-//
-// etc.
+ header {
+   border-bottom: 1px solid #ECECEC;
+   padding: 15px 0;
+   margin-bottom: 50px;
+
+   .logo {
+     height: 70px;
+     width: 93px;
+   }
+
+   .menu {
+     margin-top: 12px;
+   }
+ }
+
+.jumbotron {
+  background-color: @secundaryColor;
+  color: #FFF;
+  margin-bottom: 50px;
+  margin-top: -50px;
+
+  h1 {
+    font-weight: 300;
+  }
+}
+
+.btn-outline {
+  border-color: @primaryColor;
+  color: @primaryColor;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: @primaryColor;
+    color: #FFF;
+  }
+}
